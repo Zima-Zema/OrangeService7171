@@ -9,12 +9,12 @@ var Schema = mongoose.Schema;
 
 var subscriberSchema = new Schema({
     msisdn: {
-        type: Number,
+        type: String,
         required: true,
         index: true,
         unique: true,
         trim: true,
-        minlength: 13
+        minlength: 12
     },
     eventType: {
         type: String,
@@ -47,6 +47,7 @@ var subscriberSchema = new Schema({
 });
 
 var Subscriber = mongoose.model('Subscriber', subscriberSchema);
+
 module.exports ={
     Subscriber:Subscriber
 }
